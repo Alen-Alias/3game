@@ -25,7 +25,7 @@ app.get('/signin', (req, res) => {
     res.render('signin')
 })
 
-app.post('/register', async (req, res) => {
+app.post('/register-in', async (req, res) => {
     try {
 
         const { username, email, password } = req.body
