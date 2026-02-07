@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #000000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+}
+
+.container {
+    background-color: #0d0d0d;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #333333;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+
+.subtitle {
+    color: #808080;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+/* Navigation Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 8px 16px;
+    background-color: transparent;
+    color: #808080;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #505050;
+}
+
+/* Game Sections - Hidden by default */
+.game-section {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.game-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tic Tac Toe Grid */
+.ttt-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    max-width: 250px;
+    margin: 0 auto 20px;
+}
+
+.ttt-cell {
+    aspect-ratio: 1;
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #e0e0e0;
+    transition: background 0.2s;
+}
+
+.ttt-cell:hover:not(.taken) {
+    background-color: #252525;
+}
+
+.ttt-cell.taken {
+    cursor: default;
+}
+
+/* Hangman */
+.hangman-drawing {
+    height: 120px;
+    margin-bottom: 20px;
+    stroke: #e0e0e0;
+    stroke-width: 2;
+    fill: none;
+}
+
+.word-display {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-family: monospace;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.key {
+    width: 30px;
+    height: 30px;
+    background: #1a1a1a;
+    border: 1px solid #333333;
+    color: #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.key:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Rock Paper Scissors */
+.rps-choices {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.rps-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    border: 1px solid #333333;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    color: #fff;
+}
+
+.rps-btn:hover {
+    transform: scale(1.1);
+    background: #252525;
+}
+
+.game-result {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    color: #4cd964;
+    /* Green for win */
+    min-height: 27px;
+}
+
+.game-result.loss {
+    color: #ff3b30;
+}
+
+.game-result.draw {
+    color: #ffcc00;
+}
+
+/* Generic Controls */
+.control-btn {
+    padding: 10px 20px;
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #505050;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.control-btn:hover {
+    background-color: #404040;
+}
+
+.logout-btn {
+    margin-top: 40px;
+    background: transparent;
+    border: 1px solid #333333;
+    color: #666;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.logout-btn:hover {
+    border-color: #666;
+    color: #999;
+}
